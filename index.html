@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>portfolio</title>
+        <link rel="icon" type="image/x-icon" href="images/doraemon.png">
+        <style>
+            *
+            {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            body, a:hover
+            {
+                cursor: url(images/doraemonSmall.png), default;
+            }
+
+            #banner
+            {
+                width: 100%;
+                height: 30px;
+                background: #9FB0EA;
+            }
+            .redirect
+            {
+                cursor: url(images/doraemonSmall.png), default;
+                overflow: hidden;
+                border: none;
+                outline: none;
+                padding-top: 5px;
+                background-color: transparent;
+                font-size:15px;
+                color:white;
+            }
+            .redirect:hover
+            {
+                transition: 0.5s;
+                color: #eae69f;
+            }
+            h1
+            {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                text-align: center;
+            }
+            
+            .btn
+            {
+                cursor: url(images/doraemonSmall.png), default;
+                overflow: hidden;
+                border: none;
+                outline: none;
+                width: calc(80% / 5);
+                padding: 10px 10px;
+                background-color: white;
+                color:black;                
+            }
+            .btn:hover
+            {
+                transition: 0.5s;
+                background-color: black;
+                color: white;
+            }
+            .btn.active
+            {
+                border-style: solid none;
+                border-width: 1px;
+            }
+
+            .images
+            {
+                white-space: normal;
+                padding-left: 10%;
+                padding-right: 10%; 
+                margin-top: 50px;
+                text-align: center; 
+            }
+            .dispImg
+            {
+                cursor: url(images/doraemonSmall.png), default;
+                display:none;
+                overflow: hidden;
+                border: none;
+                margin:10px;
+                outline: none;
+                height: 300px;
+                color:azure;
+            }
+            .dispImg:hover
+            {
+                transition: 0.5s;
+                opacity:0.6;
+                background-color: #eae69f !important;
+                color: white;    
+            }
+            .dispImg.show
+            {
+                display: inline-block;
+            }
+
+            @media screen and (max-width: 950px) 
+            {
+                .smallScreen{display:initial;}
+                .largeScreen{display:none;}
+                .btn{width: 100%;}
+            }
+            @media screen and (min-width: 951px) 
+            {
+                .smallScreen{display:none;}
+                .largeScreen{display:initial;}
+                .btn{width: calc(80% / 5);}
+            }
+        </style>
+    </head>
+
+    <header>
+        <div id="banner">
+            <button class="redirect" style="float:left; padding-left:10%;"
+            onclick="location.href='index.html';"
+            >HOME</button>
+
+            <button class="redirect" style="float:right; padding-right:10%;"
+            onclick="location.href='about.html';"
+            >ABOUT</button>
+        </div>
+
+        <div class="smallScreen">
+            <h1 style="font-size:4vw"> ﾟ･:ﾟ･:,｡★ ＼(◌ˇ‿ˇ◌ )♪<br/>欢迎光临<br/>♪( ◌ˇ‿ˇ◌)/ ★,｡･:･ﾟ</h1>
+        </div>
+        <div class="largeScreen">
+            <h1> ﾟ･:ﾟ･:,｡★ ＼(◌ˇ‿ˇ◌ )♪ 欢迎光临 ♪( ◌ˇ‿ˇ◌)/ ★,｡･:･ﾟ</h1>
+        </div>
+    </header>
+
+    <body>
+        <div style="text-align: center;" id="myBtnContainer">
+            <button class="btn active" onclick="filterTag('all')">全部 ALL</button>
+            <button class="btn" onclick="filterTag('comic')">漫画 COMICS</button>
+            <button class="btn" onclick="filterTag('illus')">绘画 ILLUSTRATIONS</button>
+            <button class="btn" onclick="filterTag('design')">设计 DESIGN</button>
+            <button class="btn" onclick="filterTag('misc')">其它 MISCELLANEOUS</button>
+        </div>
+
+        <div class="images" id="myImgContainer" >
+            <!--
+                <button class="dispImg [comic illus design misc]" style="
+                    width: [width]px;
+                    background: url(./images/[date.fmt]) no-repeat;
+                    background-size: [width]px 300px;"
+                    onclick="location.href='pages/[date].html';"></button>
+            -->
+
+            
+        </div>   
+        
+        <script>
+            var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) 
+            {
+                btns[i].addEventListener("click", function()
+                {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className+= " active";
+                })
+            }
+        </script>
+
+        <script>
+            filterTag("all");
+
+            function filterTag(c)
+            {
+                var x = document.getElementsByClassName("dispImg");
+                if (c == "all") c = "";
+                for (var i = 0; i < x.length; i++)
+                {
+                    removeImg(x[i]); 
+                    if (x[i].className.indexOf(c) > -1) 
+                    {
+                        addImg(x[i]);
+                    }
+                }
+            }
+
+            function addImg(tags)
+            {
+                var t = tags.className.split(" ");
+                if (t.indexOf("show") == -1)
+                {
+                    tags.className += " show";
+                }
+            }
+
+            function removeImg(tags)
+            {
+                var t = tags.className.split(" ");
+                while (t.indexOf("show") > -1)
+                {
+                    t.splice(t.indexOf("show"), 1);
+                }
+                tags.className=t.join(" ");
+            }
+        </script>
+    </body>
+</html>
