@@ -1,0 +1,44 @@
+@import "global.css";
+
+.collapsible
+{
+    cursor: url(../images/doraemonSmall.png), default;
+    background-color: #9FB0EA;
+    border: none;
+    outline: none;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+.active,.collapsible:hover 
+{
+    cursor: url(../images/doraemonSmall.png), default;
+    background-color: #eae69f;
+    color: black;
+}
+.info 
+{
+    cursor: url(../images/doraemonSmall.png), default;
+    display: none;
+    overflow: hidden;
+    background-color: whitesmoke;
+    overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 950px) 
+{
+    .smallScreen{display:initial;}
+    .largeScreen{display:none;}
+    .collapsible{width:45%;}
+    .info{width:45%;}
+    img{width:90%;}
+}
+@media screen and (min-width: 951px) 
+{
+    .smallScreen{display:none;}
+    .largeScreen{display:initial;}
+    .collapsible{width:450px;}
+    .info{width:450px;}
+    img{width:900px}
+}

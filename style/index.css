@@ -1,0 +1,68 @@
+@import "global.css";
+
+.btn
+{
+    cursor: url(images/doraemonSmall.png), default;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    width: calc(80% / 5);
+    padding: 10px 10px;
+    background-color: white;
+    color:black;                
+}
+.btn:hover
+{
+    transition: 0.5s;
+    background-color: black;
+    color: white;
+}
+.btn.active
+{
+    border-style: solid none;
+    border-width: 1px;
+}
+
+.images
+{
+    white-space: normal;
+    padding-left: 10%;
+    padding-right: 10%; 
+    margin-top: 50px;
+    text-align: center; 
+}
+.dispImg
+{
+    cursor: url(images/doraemonSmall.png), default;
+    display:none;
+    overflow: hidden;
+    border: none;
+    margin:10px;
+    outline: none;
+    height: 300px;
+    color:azure;
+}
+.dispImg:hover
+{
+    transition: 0.5s;
+    opacity:0.6;
+    background-color: #eae69f !important;
+    color: white;    
+}
+.dispImg.show
+{
+    display: inline-block;
+}
+
+@media screen and (max-width: 950px) 
+{
+    .smallScreen{display:initial;}
+    .largeScreen{display:none;}
+    .btn{width: 100%;}
+}
+@media screen and (min-width: 951px) 
+{
+    .smallScreen{display:none;}
+    .largeScreen{display:initial;}
+    .btn{width: calc(80% / 5);}
+}

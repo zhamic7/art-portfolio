@@ -5,112 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>portfolio</title>
         <link rel="icon" type="image/x-icon" href="images/doraemon.png">
-        <style>
-            *
-            {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
-            body, a:hover
-            {
-                cursor: url(images/doraemonSmall.png), default;
-            }
-
-            #banner
-            {
-                width: 100%;
-                height: 30px;
-                background: #9FB0EA;
-            }
-            .redirect
-            {
-                cursor: url(images/doraemonSmall.png), default;
-                overflow: hidden;
-                border: none;
-                outline: none;
-                padding-top: 5px;
-                background-color: transparent;
-                font-size:15px;
-                color:white;
-            }
-            .redirect:hover
-            {
-                transition: 0.5s;
-                color: #eae69f;
-            }
-            h1
-            {
-                padding-top: 50px;
-                padding-bottom: 50px;
-                text-align: center;
-            }
-            
-            .btn
-            {
-                cursor: url(images/doraemonSmall.png), default;
-                overflow: hidden;
-                border: none;
-                outline: none;
-                width: calc(80% / 5);
-                padding: 10px 10px;
-                background-color: white;
-                color:black;                
-            }
-            .btn:hover
-            {
-                transition: 0.5s;
-                background-color: black;
-                color: white;
-            }
-            .btn.active
-            {
-                border-style: solid none;
-                border-width: 1px;
-            }
-
-            .images
-            {
-                white-space: normal;
-                padding-left: 10%;
-                padding-right: 10%; 
-                margin-top: 50px;
-                text-align: center; 
-            }
-            .dispImg
-            {
-                cursor: url(images/doraemonSmall.png), default;
-                display:none;
-                overflow: hidden;
-                border: none;
-                margin:10px;
-                outline: none;
-                height: 300px;
-                color:azure;
-            }
-            .dispImg:hover
-            {
-                transition: 0.5s;
-                opacity:0.6;
-                background-color: #eae69f !important;
-                color: white;    
-            }
-            .dispImg.show
-            {
-                display: inline-block;
-            }
-
-            @media screen and (max-width: 950px) 
-            {
-                .smallScreen{display:initial;}
-                .largeScreen{display:none;}
-                .btn{width: 100%;}
-            }
-            @media screen and (min-width: 951px) 
-            {
-                .smallScreen{display:none;}
-                .largeScreen{display:initial;}
-                .btn{width: calc(80% / 5);}
-            }
-        </style>
+        <link rel="stylesheet" href="style/index.css">
     </head>
 
     <header>
@@ -134,12 +29,13 @@
 
     <body>
         <div style="text-align: center;" id="myBtnContainer">
-            <button class="btn active" onclick="filterTag('all')">ALL</button>
-            <button class="btn" onclick="filterTag('nahs')">NAHS</button>
-            <button class="btn" onclick="filterTag('two')">C/O 22</button>
+            <button class="btn active" onclick="filterTag('all')">ALL</button>         
+            <button class="btn" onclick="filterTag('two')">DESIGNS</button>
+            <button class="btn" onclick="filterTag('per')">PERSONAL ART</button>
             <button class="btn" onclick="filterTag('mac')">MACROCOSM 2021</button>
             <button class="btn" onclick="filterTag('ap')">AP DRAWING</button>
-            <button class="btn" onclick="filterTag('per')">PERSONAL</button>
+            <button class="btn" onclick="filterTag('nahs')">NAHS</button>
+            
         </div>
 
         <div class="images" id="myImgContainer" >
@@ -150,9 +46,15 @@
                     background-size: [width]px 300px;"
                     onclick="location.href='pages/[date].html';"></button>
             -->
+            <!-- 2023 -->
+            <button class="dispImg two" style="
+                    width: 300px;
+                    background: url(./images/20230214.png) no-repeat;
+                    background-size: 300px 300px;"
+            onclick="location.href='pages/20230214.html';"></button>
 
             <!-- 2022 -->
-            <button class="dispImg per" style="
+            <button class="dispImg two" style="
                     width: 300px;
                     background: url(./images/20221117.jpg) no-repeat;
                     background-size: 300px 300px;"
