@@ -1,0 +1,22 @@
+@import "global.css";
+
+.description
+{
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 950px) 
+{
+    .smallScreen{display:initial;}
+    .largeScreen{display:none;}
+    .description{width: 50%;}
+}
+@media screen and (min-width: 951px) 
+{
+    .smallScreen{display:none;}
+    .largeScreen{display:initial;}
+    .description{width: 500px;}
+}

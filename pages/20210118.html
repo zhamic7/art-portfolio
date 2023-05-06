@@ -4,89 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>portfolio</title>
+        <link rel="stylesheet" href="../style/pages.css">
         <link rel="icon" type="image/x-icon" href="../images/doraemon.png">
-        <style>
-            *
-            {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
-            body, a:hover
-            {
-                cursor: url(../images/doraemonSmall.png), default;
-            }
-
-            #banner
-            {
-                width: 100%;
-                height: 30px;
-                background: #9FB0EA;
-            }
-            .redirect
-            {
-                cursor: url(../images/doraemonSmall.png), default;
-                overflow: hidden;
-                border: none;
-                outline: none;
-                padding-top: 5px;
-                background-color: transparent;
-                font-size:15px;
-                color:white;
-            }
-            .redirect:hover
-            {
-                transition: 0.5s;
-                color: #eae69f;
-            }
-            h1
-            {
-                padding-top: 50px;
-                padding-bottom: 50px;
-                text-align: center;
-            }
-
-            .collapsible
-            {
-                cursor: url(../images/doraemonSmall.png), default;
-                background-color: #9FB0EA;
-                border: none;
-                outline: none;
-                padding: 15px;
-                text-align: center;
-                color: white;
-                font-size: 15px;
-            }
-            .active,.collapsible:hover 
-            {
-                cursor: url(../images/doraemonSmall.png), default;
-                background-color: #eae69f;
-                color: black;
-            }
-            .info 
-            {
-                cursor: url(../images/doraemonSmall.png), default;
-                display: none;
-                overflow: hidden;
-                background-color: whitesmoke;
-                overflow-wrap: break-word;
-            }
-
-            @media screen and (max-width: 950px) 
-            {
-                .smallScreen{display:initial;}
-                .largeScreen{display:none;}
-                .collapsible{width:45%;}
-                .info{width:45%;}
-                img{width:90%;}
-            }
-            @media screen and (min-width: 951px) 
-            {
-                .smallScreen{display:none;}
-                .largeScreen{display:initial;}
-                .collapsible{width:450px;}
-                .info{width:450px;}
-                img{width:900px}
-            }
-        </style>
     </head>
 
     <header>
@@ -129,23 +48,5 @@
         </div>
     </body>
 
-    <script>
-        var expand = document.getElementsByClassName("collapsible");
-        for (var i = 0; i < expand.length; i++)
-        {
-            expand[i].addEventListener("click", function()
-            {
-                this.classList.toggle("active");
-                var content = document.getElementsByClassName("info");
-                if (content[0].style.display == "inline-block")
-                {
-                    content[0].style.display = "none";
-                }
-                else
-                {
-                    content[0].style.display = "inline-block";
-                }
-            });
-        }
-    </script>
+    <script type="text/javascript" src="../style/info.js"></script>
 </html>
